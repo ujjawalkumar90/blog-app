@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlogSpace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>✍️ BlogSpace</h1>
+  <button class="alt" onclick="openPosts('all')">All Posts</button>
+  <button class="alt" onclick="openPosts('mine')">My Posts</button>
+  <button class="alt" onclick="openEditor()">New Post</button>
+  <button id="authBtn">Login</button>
+</header>
+<main>
+  <section id="list"><h2 id="heading">All Posts</h2><div id="posts"></div></section>
+  <section id="detail" class="hidden"><div id="post" class="card"></div></section>
+  <section id="editor" class="hidden"><div class="card">
+    <h2 id="editorTitle">Create a New Post</h2>
+    <input id="title" maxlength="120" placeholder="Post title">
+    <textarea id="content" rows="9" maxlength="5000" placeholder="Write your post..."></textarea>
+    <button onclick="savePost()">Publish</button>
+  </div></section>
+  <section id="account" class="hidden"><div class="card narrow">
+    <h2>Login / Register</h2>
+    <input id="name" placeholder="Name (only for register)">
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password (min 6 characters)">
+    <button onclick="authenticate('login')">Login</button>
+    <button class="alt" onclick="authenticate('register')">Register</button>
+  </div></section>
+</main>
+<div id="msg" role="status"></div>
+<script src="common.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
